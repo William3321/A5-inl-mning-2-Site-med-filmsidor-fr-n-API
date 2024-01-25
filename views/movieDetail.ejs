@@ -1,0 +1,23 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= movie.data?.attributes?.title ?? 'No Title' %> Details</title>
+</head>
+<body>
+  <h1><%= movie.data?.attributes?.title ?? 'No Title' %> Details</h1>
+  <p><%= movie.data?.attributes?.intro ?? 'No Intro' %></p>
+  <!--
+    
+  <p><%= movie.data?.attributes?.createdAt ?? 'No Date' %></p>
+  <p><%= movie.data?.attributes?.updatedAt ?? 'No Date' %></p>
+  <p><%= movie.data?.attributes?.publishedAt ?? 'No Date' %></p>
+
+  visste inte om jag skulle ta med datum men isåfall hade jag gjort på det här sättet -->
+
+  <% if (movie.data?.attributes?.image?.url) { %>
+      <img style="max-width: 400px;" src="<%= movie.data.attributes.image.url %>" alt="<%= movie.data.attributes.title %> Image">
+  <% } else { %>
+      <p>No Image Available</p>
+  <% } %>
+  <!-- Lägg till andra detaljer som du vill visa -->
+</body>
